@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chrome 和 Edge 回填表單的問題</title>
+    </head>
+<body>
+    <h1>Chrome 和 Edge 回填表單的問題</h1>
+    <p>
+        當開發人員調整過表單元素的 action 後，Chrome 和 Edge 在使用者用 history.go(-1) 回到表單頁時不會代回先前輸入的值。<br>
+    <form action="/modified-action" method='post'>
+            <input type="submit" name='action-modified-result-page' value='到表單action屬性被動過的展示頁' >
+        </form>
+    </p>
+    <p>
+        只要不在瀏覽器這端動到表單的 action 屬性，那 Chrome 和 Edge 就會在使用者用 history.go(-1) 回到表單頁時代回先前輸入的值。<br>
+        <form action="/fixed-action" method='post'>
+            <input type="submit" name='action-modified-result-page' value='到沒調整表單action屬性的展示頁' >
+        </form>
+    </p>
+    <h4>已確定有此特性的瀏覽器</h4>
+    <p>
+        <ul>
+            <li>Chrome 版本 96.0.4664.45 (64bit)</li>
+            <li>Edge 版本 95.0.1020.53 (64bit)</li>
+        </ul>
+    </p>
+    <h4>已確定無此特性的瀏覽器</h4>
+    <p>
+        <ul>
+            <li>Firefox 94.0.1 (64bit)</li>
+            <li>Windows 10 21H1 build 19043.1348 內建的 IE 11</li>
+        </ul>
+    </p>
+
+
+
+</body>
+</html>

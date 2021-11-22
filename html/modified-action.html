@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form元素action有變化</title>
+        <script>
+            function submitTopForm() {
+                document.form1.action = '/detail';
+                document.form1.submit();
+            }
+
+            function submitBottomForm() {
+                document.form2.action = '/detail';
+                document.form2.submit();
+            }
+        </script>
+    </head>
+<body>
+    <h4>表單元素的 action 屬性一開始未指定，接著在客戶透過 javascript 指定屬性值。</h4>
+    <p>請在 Field 1 輸入任意值，然後提交表單，接著再「回上一頁」查看欄位的值是否仍存在。</p>
+<p>
+    提交表單的按鈕是型態為 button 的 input 元素，使用者按下後會透過 js 函式設定 action 再送出請求。</p>
+    <form method='post' name='form1'>
+        <p><label for="f1">Field 1<input type='text' id='f1' name='f1' ></label><br></p>
+        <p><input type="button" name='submit-to-detail' value='提交表單' onclick="submitTopForm()">
+        <input type='button' name='back' value='回上一頁' onclick='history.go(-1);' ></p>
+    </form>
+</p>
+<p>
+    提交表單的按鈕是型態為 submit 的 input 元素，但是表單綁了與上面一段作用相同的函式。<br>該函式會在使用者提交時先設定 action 再送出請求。</p>
+    <form method='post' onsubmit="submitBottomForm()" name='form2'>
+        <p><label for="f1">Field 1<input type='text' id='f1' name='f1' ></label><br></p>
+        <p><input type="submit" name='submit-to-detail' value='提交表單' >
+        <input type='button' name='back' value='回上一頁' onclick='history.go(-1);' ></p>
+    </form>
+</body>
+</html>

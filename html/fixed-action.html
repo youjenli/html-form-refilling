@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form元素action固定</title>
+    </head>
+<body>
+    <h4>表單元素的 action 屬性一開始就固定，送到客戶端也不會變化</h4>
+<p>
+    請在 Field 1 輸入任意值，然後提交表單，接著再「回上一頁」查看欄位的值是否仍存在。<br></p>
+    <form action="/detail" method='post'>
+        <p>
+        <label for="f1">Field 1<input type='text' id='f1' name='f1'></label><br>
+    </p>
+    <p><input type="submit" name='submit-to-detail' value='提交表單' >
+        <input type='button' name='back' value='回上一頁' onclick='history.go(-1);' >
+    </p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "form-refilling-in-chrome",
+  "version": "1.0.0",
+  "description": "Demonstration of the form refilling issue in chrome.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "youjenli",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.13",
+    "express": "^4.17.1",
+    "on-headers": "^1.0.2"
+  }
+}
